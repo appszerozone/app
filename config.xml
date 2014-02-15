@@ -1,0 +1,4 @@
+<option name="username" required="true" type="textfield" value="admin" tooltip="Please enter your username"/> 
+<option name="password" required="true" type="textfield" value="admin"/> 
+<option name="autobackup" required="false" type="select" options="yes|no" value="yes"/> 
+<option name="show_debuginfo" required="false" type="checkbox" value="0"/>
