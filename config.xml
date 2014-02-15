@@ -2,3 +2,4 @@
 <option name="password" required="true" type="textfield" value="admin"/> 
 <option name="autobackup" required="false" type="select" options="yes|no" value="yes"/> 
 <option name="show_debuginfo" required="false" type="checkbox" value="0"/>
+var debug = false; // Debug to true when testing in browser, bt_config will be auto-created. var option_value_you_want_to_read = ''; if(debug) { $.get("config.xml", function(data) { option_value_you_want_to_read = $(data).find('option[name=option_abc]').attr('value'); }); } else { $.get("bt_config.xml", function(data) { option_value_you_want_to_read = $(data).find('option[name=option_abc]').attr('value'); }); }
