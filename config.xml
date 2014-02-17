@@ -1,5 +1,55 @@
-<option name="username" required="true" type="textfield" value="admin" tooltip="Please enter your username"/> 
-<option name="password" required="true" type="textfield" value="admin"/> 
-<option name="autobackup" required="false" type="select" options="yes|no" value="yes"/> 
-<option name="show_debuginfo" required="false" type="checkbox" value="0"/>
-var debug = false; // Debug to true when testing in browser, bt_config will be auto-created. var option_value_you_want_to_read = ''; if(debug) { $.get("config.xml", function(data) { option_value_you_want_to_read = $(data).find('option[name=option_abc]').attr('value'); }); } else { $.get("bt_config.xml", function(data) { option_value_you_want_to_read = $(data).find('option[name=option_abc]').attr('value'); }); }
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns		= "http://www.w3.org/ns/widgets"
+        xmlns:gap	= "http://phonegap.com/ns/1.0"
+        id			= "com.packagename.webview"
+		versionCode	= "1"
+        version		= "1.1">
+
+    <name>Webview</name>
+
+    <description>
+        Webview Template
+    </description>
+
+    <author href="http://robinbonnes.nl" email="info@robinbonnes.nl">
+        BuildTool
+    </author>
+
+	<gap:plugin name="org.apache.cordova.console" />
+	<gap:plugin name="org.apache.cordova.device" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" />
+	<gap:plugin name="org.apache.cordova.network-information" />
+	<gap:plugin name="org.apache.cordova.dialogs" />
+	<gap:plugin name="org.apache.cordova.splashscreen" />
+	<gap:plugin name="org.apache.cordova.vibration" />
+	<gap:plugin name="com.phonegap.plugin.statusbar" />
+	<gap:plugin name="com.rjfun.cordova.plugin.iad" />
+	
+	<preference name="phonegap-version" value="3.1.0"/>
+	<preference name="orientation" value="default"/>
+	<preference name="target-device" value="universal"/>
+	<preference name="Fullscreen" value="true"/>
+	<preference name="webviewbounce" value="false"/>
+	<preference name="prerendered-icon" value="true"/>
+	<preference name="stay-in-webview" value="true"/>
+	<preference name="ios-statusbarstyle" value="black-opaque"/>
+	<preference name="detect-data-types" value="true"/>
+	<preference name="exit-on-suspend" value="false"/>
+	<preference name="show-splash-screen-spinner" value="false"/>
+	<preference name="SplashScreenDelay" value="5000"/>
+	<preference name="disable-cursor" value="false"/>
+	<preference name="android-minSdkVersion" value="7"/>
+	<preference name="android-installLocation" value="auto"/>
+	<preference name="AutoHideSplashScreen" value="false" />
+	
+	<access origin="*" />
+	<access uri="*" subdomains="true" />
+	
+	<option name="webview_url" required="true" type="textfield" value="http://google.com"/>
+	<option name="overlay_statusbar" required="true" type="checkbox" value="0"/>
+	<option name="overlay_statusbar_style" required="true" type="select" options="dark|light" value="light"/>
+	<option name="enable_iad" required="true" type="checkbox" value="0"/>
+	<option name="iad_position" required="true" type="select" options="bottom|top" value="bottom"/>
+</widget>
